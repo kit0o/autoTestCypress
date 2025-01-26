@@ -2,10 +2,10 @@
 
 describe('Покупка аватара в Покемонах', function() {
     it('e2e путь по покупке аватара', function() {
-        cy.visit('https://pokemonbattle.ru/'); // заходим на сайт покемонов
+        cy.visit('https://pokemonbattle.ru/'); // заходим на сайт https://pokemonbattle.ru/
 
-        cy.get(':nth-child(1) > .auth__input').type('hemist1@yandex.ru'); // вводим логин
-        cy.get('#password').type('Byby12345'); // вводим пароль
+        cy.get(':nth-child(1) > .auth__input').type('USER_LOGIN'); // вводим логин
+        cy.get('#password').type('USER_PASSWORD'); // вводим пароль
         cy.get('.auth__button').click(); // нажимаем войти
         cy.wait(2000); // ждём 2 секунды
         cy.get('.header__container > .header__id').click(); // намимаем на кнопку профиля
