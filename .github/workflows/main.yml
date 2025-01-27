@@ -2,6 +2,8 @@ name: Cypress Tests
 
 on:
   workflow_dispatch:
+  repository_dispatch:
+    types: [start-example-workflow]
 
 jobs:
   cypress-run:
