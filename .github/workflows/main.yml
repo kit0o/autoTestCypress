@@ -28,14 +28,10 @@ jobs:
       - name: Run Cypress tests
         run: npx cypress run
         
-      # Сохранение результатов теста
-      - name: Save test results
-        run: mv coverage/coverage-final.xml test_results.xml
-        
       # Извлечение данных из отчета
       - name: Extract data from report
         run: |
-          tests_passed=$(xmlstarlet sel -t -v "/testsuite/@tests" test_results.xml)
+          tests_passed=$(jq '.stats.tests' results/test-results.json)
           
       # Отправка сообщения в Telegram
       - name: Send message to Telegram
