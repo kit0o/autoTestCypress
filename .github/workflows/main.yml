@@ -46,4 +46,4 @@ jobs:
           curl -X POST \
                -H 'Content-Type: application/json' \
                -d '{"chat_id": "'$CHAT_ID'", "text": "Тестирование завершено. Пройдено тестов: '$tests_passed'"}' \
-               https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage
+               https://api.telegram.org/bot${TG_API_KEY}/sendMessage
