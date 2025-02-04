@@ -4,9 +4,7 @@ on:
   workflow_dispatch:
   repository_dispatch:
     types: [start-example-workflow]
-env:
-  TG_API_KEY: ${{ secrets.TG_API_KEY }}
-  
+    
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
